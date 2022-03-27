@@ -12,7 +12,7 @@ public class AccountModel {
     public AccountModel() {
         conn = ConnectionHelper.getConnection();
     }
-    public Account findById(int id) throws SQLException {
+    public static Account findById(int id) throws SQLException {
         PreparedStatement stmt = conn.prepareStatement("select * from accounts where id = ?");
         stmt.setInt(1, id);
         ResultSet rs = stmt.executeQuery();
